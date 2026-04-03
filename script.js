@@ -11,36 +11,48 @@ const bgMusic = document.getElementById('bgMusic');
 
 let current = 0;
 
-document.getElementById('enterBtn').addEventListener('click', () => {
-    bgMusic.play();
-    startScreen.classList.remove('active');
-    pages[0].classList.add('active');
+// ENTER BUTTON
+document.getElementById('enterBtn').addEventListener('click', function() {
+
+    bgMusic.play().catch(() => {});
+
+    startScreen.style.display = "none";
+    pages[0].style.display = "flex";
 });
 
+// YES BUTTON
 document.querySelectorAll('.yes').forEach(btn => {
-    btn.addEventListener('click', () => {
-        pages.forEach(p => p.classList.remove('active'));
-        finalPage.classList.add('active');
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.page').forEach(p => {
+            p.style.display = "none";
+        });
+
+        finalPage.style.display = "flex";
     });
 });
 
+// NO BUTTON NORMAL
 document.querySelectorAll('.no').forEach(btn => {
-    btn.addEventListener('click', () => {
-        pages[current].classList.remove('active');
+    btn.addEventListener('click', function() {
+        pages[current].style.display = "none";
         current++;
-        if(current < pages.length){
-            pages[current].classList.add('active');
+
+        if(current < pages.length) {
+            pages[current].style.display = "flex";
         }
     });
 });
 
+// FLOATING NO BUTTON PAGE 4
 const movingNo = document.getElementById('movingNo');
 
-movingNo.addEventListener('click', () => {
+movingNo.addEventListener('click', function(e) {
+    e.preventDefault();
+
     const frame = document.querySelector('.mobile-frame');
 
-    const maxX = frame.clientWidth - movingNo.clientWidth;
-    const maxY = frame.clientHeight - movingNo.clientHeight;
+    const maxX = frame.clientWidth - movingNo.offsetWidth;
+    const maxY = frame.clientHeight - movingNo.offsetHeight;
 
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
