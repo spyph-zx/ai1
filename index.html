@@ -12,13 +12,13 @@
 
 <div class="blossoms"></div>
 
-<!-- START SCREEN -->
-<div id="startScreen" class="page active">
+<!-- START PAGE -->
+<div id="startScreen" class="page" style="display:flex;">
     <button id="enterBtn">Enter ❤️</button>
 </div>
 
 <!-- PAGE 1 -->
-<div class="page" id="page1">
+<div class="page" id="page1" style="display:none;">
     <img src="gif1.gif" class="gif">
     <p>Your first sentence here ❤️</p>
     <div class="buttons">
@@ -28,7 +28,7 @@
 </div>
 
 <!-- PAGE 2 -->
-<div class="page" id="page2">
+<div class="page" id="page2" style="display:none;">
     <img src="gif2.gif" class="gif">
     <p>Your second sentence here ❤️</p>
     <div class="buttons">
@@ -38,7 +38,7 @@
 </div>
 
 <!-- PAGE 3 -->
-<div class="page" id="page3">
+<div class="page" id="page3" style="display:none;">
     <img src="gif3.gif" class="gif">
     <p>Your third sentence here ❤️</p>
     <div class="buttons">
@@ -48,21 +48,23 @@
 </div>
 
 <!-- PAGE 4 -->
-<div class="page" id="page4">
+<div class="page" id="page4" style="display:none;">
     <img src="gif4.gif" class="gif">
     <p>Your fourth sentence here ❤️</p>
-    <div class="buttons mobile-frame">
+
+    <div class="mobile-frame">
         <button class="yes">Yes</button>
         <button id="movingNo">No</button>
     </div>
 </div>
 
 <!-- FINAL PAGE -->
-<div class="page" id="finalPage">
+<div class="page" id="finalPage" style="display:none;">
     <img src="gif5.gif" class="gif">
     <p>Your final romantic message here ❤️</p>
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
