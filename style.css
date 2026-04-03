@@ -1,54 +1,112 @@
 body {
-    background-image: url('background.jpg');
-    background-size: cover;
-    color: white;
-    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('bg.jpg') center center/cover no-repeat fixed;
+    font-family: Arial, sans-serif;
     overflow: hidden;
+    color: white;
+    text-align: center;
+    background-color: black;
 }
 
-#start-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-#enter-button {
-    padding: 20px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 200px rgba(255,0,100,0.2);
+    z-index: -1;
 }
 
 .page {
-    text-align: center;
-    padding: 50px;
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.active {
+    display: flex;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#enterBtn {
+    background: #ff4d88;
+    color: white;
+    box-shadow: 0 0 20px #ff4d88;
+}
+
+.yes {
+    background: #00ff99;
+    color: black;
+    width: 100px;
+}
+
+.no, #movingNo {
+    background: #ff3366;
+    color: white;
+    width: 100px;
+}
+
+.gif {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+}
+
+p {
+    font-size: 22px;
+    margin-top: 20px;
+    text-shadow: 0 0 10px pink;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.mobile-frame {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+#movingNo {
+    position: absolute;
+    right: 20px;
 }
 
 .blossoms {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: url('blossoms.png') repeat;
-    animation: fall 5s linear infinite;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(pink 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: fall 10s linear infinite;
+    opacity: 0.25;
 }
 
 @keyframes fall {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-}
-
-.float {
-    animation: float 2s infinite;
-}
-
-@keyframes float {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
-    100% { transform: translateX(0); }
+    from {
+        background-position: 0 -100px;
+    }
+    to {
+        background-position: 0 100vh;
+    }
 }
