@@ -1,55 +1,68 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romantic Blossoms</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="start-screen">
-        <button id="enter-button">Enter & Play</button>
+
+<audio id="bgMusic" src="audio.mp3"></audio>
+
+<div class="blossoms"></div>
+
+<!-- START SCREEN -->
+<div id="startScreen" class="page active">
+    <button id="enterBtn">Enter ❤️</button>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+    <img src="gif1.gif" class="gif">
+    <p>Your first sentence here ❤️</p>
+    <div class="buttons">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
     </div>
-    <div id="main-content" class="hidden">
-        <div class="blossoms"></div>
-        <div class="page" id="page1">
-            <h1>Welcome to the Romantic Blossoms</h1>
-            <p>Let love bloom like the blossoms in spring.</p>
-            <button class="next">Next</button>
-        </div>
-        <div class="page hidden" id="page2">
-            <h1>Feel the Love</h1>
-            <p>Every moment is a memory waiting to be made.</p>
-            <button class="next">Next</button>
-        </div>
-        <div class="page hidden" id="page3">
-            <h1>Share Your Feelings</h1>
-            <p>What do you feel? Choose below:</p>
-            <div class="gif-container">
-                <img src="gif1.gif" alt="Romantic GIF">
-                <button class="yes">Yes</button>
-                <button class="no">No</button>
-            </div>
-            <button class="next hidden">Next</button>
-        </div>
-        <div class="page hidden" id="page4">
-            <h1>Final Thoughts</h1>
-            <p>What do you think about love?</p>
-            <div class="gif-container">
-                <img src="gif2.gif" alt="Romantic GIF">
-                <button class="yes">Yes</button>
-                <button class="no float">No</button>
-            </div>
-            <button class="next hidden">Next</button>
-        </div>
-        <div class="page hidden" id="page5">
-            <h1>Thank You for Visiting</h1>
-            <img src="gif3.gif" alt="Thank You GIF">
-            <p>Love is in the air!</p>
-        </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <img src="gif2.gif" class="gif">
+    <p>Your second sentence here ❤️</p>
+    <div class="buttons">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
     </div>
-    <audio id="background-audio" src="audio.mp3"></audio>
-    <script src="script.js"></script>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <img src="gif3.gif" class="gif">
+    <p>Your third sentence here ❤️</p>
+    <div class="buttons">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+    </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+    <img src="gif4.gif" class="gif">
+    <p>Your fourth sentence here ❤️</p>
+    <div class="buttons mobile-frame">
+        <button class="yes">Yes</button>
+        <button id="movingNo">No</button>
+    </div>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="page" id="finalPage">
+    <img src="gif5.gif" class="gif">
+    <p>Your final romantic message here ❤️</p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
